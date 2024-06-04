@@ -334,6 +334,10 @@
 ;; Classification of RVV instructions which will be added to each RVV .md pattern and used by scheduler.
 ;; rdvlenb     vector byte length vlenb csrr read
 ;; rdvl        vector length vl csrr read
+;; dsp     Digital Signal Processing (DSP) instructions
+;; simd    simd in rvp extension
+;; psimd    partial-simd in rvp extension
+;; dsp64   Digital Signal Processing (DSP) instructions for 64bits
 ;; wrvxrm      vector fixed-point rounding mode write
 ;; wrfrm       vector floating-point rounding mode write
 ;; vsetvl      vector configuration-setting instrucions
@@ -468,8 +472,8 @@
    mtc,mfc,const,arith,logical,shift,slt,imul,idiv,move,fmove,fadd,fmul,
    fmadd,fdiv,fcmp,fcvt,fcvt_i2f,fcvt_f2i,fsqrt,multi,auipc,sfb_alu,nop,trap,
    ghost,bitmanip,rotate,clmul,min,max,minu,maxu,clz,ctz,cpop,
-   atomic,condmove,crypto,mvpair,zicond,rdvlenb,rdvl,wrvxrm,wrfrm,
-   rdfrm,vsetvl,vsetvl_pre,vlde,vste,vldm,vstm,vlds,vsts,
+   atomic,condmove,crypto,mvpair,zicond,rdvlenb,rdvl,dsp,simd,psimd,dsp64,
+   wrvxrm,wrfrm,rdfrm,vsetvl,vsetvl_pre,vlde,vste,vldm,vstm,vlds,vsts,
    vldux,vldox,vstux,vstox,vldff,vldr,vstr,
    vlsegde,vssegte,vlsegds,vssegts,vlsegdux,vlsegdox,vssegtux,vssegtox,vlsegdff,
    vialu,viwalu,vext,vicalu,vshift,vnshift,vicmp,viminmax,
@@ -3830,3 +3834,4 @@
 (include "zc.md")
 (include "corev.md")
 (include "xiangshan.md")
+(include "rvp.md")
