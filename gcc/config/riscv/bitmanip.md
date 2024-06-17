@@ -334,7 +334,7 @@
 {
   if (TARGET_XTHEADBB && !immediate_operand (operands[2], VOIDmode))
     FAIL;
-  if (TARGET_64BIT && register_operand (operands[2], QImode))
+  if (TARGET_64BIT && !TARGET_ILP32 && register_operand (operands[2], QImode))
     {
       rtx t = gen_reg_rtx (DImode);
       emit_insn (gen_rotrsi3_sext (t, operands[1], operands[2]));
@@ -376,7 +376,7 @@
                   (match_operand:QI 2 "register_operand" "r")))]
   "TARGET_ZBB || TARGET_ZBKB"
 {
-  if (TARGET_64BIT)
+  if (TARGET_64BIT && !TARGET_ILP32)
     {
       rtx t = gen_reg_rtx (DImode);
       emit_insn (gen_rotlsi3_sext (t, operands[1], operands[2]));
