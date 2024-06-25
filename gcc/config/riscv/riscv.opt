@@ -624,3 +624,12 @@ Enum(tls_type) String(desc) Value(TLS_DESCRIPTORS)
 mtls-dialect=
 Target RejectNegative Joined Enum(tls_type) Var(riscv_tls_dialect) Init(TLS_TRADITIONAL) Save
 Specify TLS dialect.
+
+TargetVariable
+int riscv_rvp_subext
+
+Mask(ZPN)         Var(riscv_rvp_subext)
+
+Mask(ZBPBO)       Var(riscv_rvp_subext)
+
+Mask(ZPSFOPERAND) Var(riscv_rvp_subext)
